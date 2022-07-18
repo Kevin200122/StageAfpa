@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+<body>
+    <h3>Bienvenu pour continuer veuillez remplir ce formulaire ci-dessous:</h3>
+    <div>
+        <form id="formulaire" method="POST" onsubmit="process(event)"></form>
+            <label>Vous êtes:</label>
+            <select>
+                <option>Administrateur</option>
+                <option>Un utilisateur</option>
+                <option>Un client</option>
+            </select><br><br>
+            <label>Votre pays:</label>
+            <select>
+                <option>Belgique</option>
+                <option>France</option>
+                <option>Suisse</option>
+                <option>Allemagne</option>
+                <option>Espagne</option>
+                <option>Finlande</option>
+                <option>Italie</option>
+                <option>Portugal</option>
+                <option>Irlande</option>
+            </select><br><br>
+            <label>Date d'inscription*:</label>
+            <input type="date" id="ladate" value="2018-07-22" min="2022-07-01" max="2065-12-31" required="required"><br><br>
+            <label>Nom*:</label>
+            <input type="text" placeholder="Insérer votre nom" required="required"><br><br>
+            <label>Prénom*</label>
+            <input type="text" placeholder="Insérer votre prénom" required="required"><br><br>
+            <label>Email*:</label>
+            <input type="email" class="Email1" id="email22" placeholder="Ex:votrenom25@gmail.com" required="required" name="email"><br><br>
+            <label>Mot de passe*:</label>
+            <input type="password" class="mdp1" placeholder="Votre mot de passe" required="required" name="password"><br><br>
+            <label>Ville*:</label>
+            <input type="text" class="Ville1" placeholder="Ex:Nantes" required="required">
+            <label>Code postale:</label>
+            <input type="number" placeholder="Ex:76000" required="required"><br><br>
+            <label>Adresse*:</label>
+            <input type="text" class="Adresse1" placeholder="Votre adresse" required="required" name="adresse"><br>
+            <label>Adresse:</label>
+            <input type="text" class="Adresse2" placeholder="Votre adresse"><br>
+            <label>Adresse:</label>
+            <input type="text" class="Adresse3" placeholder="Votre adresse"><br><br>
+            <label>Téléphone(mobile)*:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ex: 06 54 87 02 70" name="mobile"><br><br>
+            <p>Remarque: Le remplissage des champs marqués par une étoile sont obligatoire !!</p>
+            <button type="submit" action="Message.html" class="btn-primary">S'inscrire</button>
+            <p>Si vous êtes déjà inscrit veuillez vous connecter <a href="Connexion.html">ici</a></p>
+        </form>
+    </div>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+</script>
+<script src="../script/ReglageInscription.js"></script>
+</body>
+</html>
