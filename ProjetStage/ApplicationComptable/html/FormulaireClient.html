@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Clients</title>
+</head>
+<body>
+    <form method="post" action="traitement.php">
+        <p>Veuillez remplir ces champs:</p>
+        <label>Nom:</label>
+        <input type="text" id="UnNom" required="required">
+        <span id="Nom_manquant"></span><br><br>
+        <label>Prénom</label>
+        <input type="text" id="UnPrenom" required="required">
+        <span id="Prenom_Manquant"></span><br><br>
+        <label>Nom de l'entreprise:</label>
+        <input type="text" id="Enseigne" required="required">
+        <span id="Enseigne_Manquant"></span><br><br>
+        <label>Adresse:</label>
+        <input type="text" id="UneAdresse">
+        <span id="Adresse_Manquante"></span><br><br>
+        <label>Code postale:</label>
+        <input type="number" id="postale" required="required">
+        <span id="CP_Manquant"></span><br><br>
+        <label>Numéro de SIRET</label>
+        <input type="number" id="SIRET">
+        <span id="Le_Siret"></span><br><br>
+
+        <input type="submit" value="Valider" id="Envoyer_Donnees">
+
+    </form>
+    
+</body>
+</html>

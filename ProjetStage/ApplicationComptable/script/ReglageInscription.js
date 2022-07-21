@@ -54,7 +54,7 @@ function Email_valid(e) {
 var MDPValider = document.getElementById('Envoyer');
 var mdp = document.getElementById('LeMdp');
 var mdp_m = document.getElementById('MDP_Vide');
-var mdp_v = /((?=. \d)(?=. [az])(?=. [AZ])(?=. [@#$%]).{6,20})/;
+var mdp_v = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
 MDPValider.addEventListener('click', MDP_valid);
 
 function MDP_valid(e) {
@@ -90,7 +90,7 @@ function Ville_valid(e) {
 var CPValider = document.getElementById('Envoyer');
 var cp = document.getElementById('LeCp');
 var cp_m = document.getElementById('CP_Vide');
-var cp_v = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+var cp_v = /^((0[1-9])|([1-8][0-9])|(9[0-8)|(2A)|(2B))[0-9]{3}$))/;
 CPValider.addEventListener('click', CP_valid);
 
 function CP_valid(e) {
@@ -98,7 +98,7 @@ function CP_valid(e) {
         e.preventDefault();
         cp_m.textContent = 'Code postale non insérer';
         cp_m.style.color = 'red';
-    } else if (ville_v.test(ville.value) == false) {
+    } else if (cp_v.test(cp.value) == false) {
         e.preventDefault();
         cp_m.textContent = 'Le format est incorrect';
         cp_m.style.color = 'orange';
@@ -107,9 +107,9 @@ function CP_valid(e) {
 
 
 var AdresseValider = document.getElementById('Envoyer');
-var adresse = document.getElementById('LeCp');
+var adresse = document.getElementById('UneAdresse');
 var adresse_m = document.getElementById('Adresse_vide');
-var adresse_v = /\s + (\ d {2,5}\s +) (?! [a | p] m\b) (([a-zA-Z |\s +] {1,5}) {1,2}) ? ([\ s | \, |.] +)? (([a-zA-Z |\s +] {1,30}) {1,4}) (cour | ct | street | st | drive | dr | lane | ln | road | rd | blvd) ([\ s | \, |. |;;];) (([a-zA-Z |\s +] {1,30}) {1,2} ) ([\ s | \, |.] +)?\b (AK | AL | AR | AZ | CA | CO | CT | DC | DE | FL | GA | GU | III | IA | ID | IL | IN | KS | KY | LA | MA | MD | ME | MI | MN | MO | MS | MT | NC | ND | NE | NH | NJ | NM | NV | NY | OH | OK | OU | PA | RI | SC | SD | TN | TX | UT | VA | VI | VT | WA | WI | WV | WY) ([\ s | \, |.] +)? (\ S +\d {5})? ([\ S | \, |.] +)/;
+var adresse_v = /[a-z0-9*(é|è|à|ù)A-Z\d\s\-\,\#\.\+]/;
 AdresseValider.addEventListener('click', Adresse_valid);
 
 function Adresse_valid(e) {
@@ -121,5 +121,23 @@ function Adresse_valid(e) {
         e.preventDefault();
         adresse_m.textContent = 'Le format est incorrect';
         adresse_m.style.color = 'orange';
+    }
+}
+
+var TelValider = document.getElementById('Envoyer');
+var tel = document.getElementById('LeTelephone');
+var tel_m = document.getElementById('Telephone_Vide');
+var tel_v = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+TelValider.addEventListener('click', Tel_valid);
+
+function Tel_valid(e) {
+    if (tel.validity.valueMissing) {
+        e.preventDefault();
+        tel_m.textContent = 'Téléphone non insérer';
+        tel_m.style.color = 'red';
+    } else if (tel_v.test(telephone.value) == false) {
+        e.preventDefault();
+        tel_m.textContent = 'Le format est incorrect';
+        tel_m.style.color = 'orange';
     }
 }

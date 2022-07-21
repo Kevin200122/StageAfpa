@@ -1,27 +1,36 @@
-let form = document.querySelector('#Lemail');
-//Entendre la modification de cet Email
 
-form.email.addEventListener('change', function () {
-    validerEmail(this);
-});
+var EnvoyerMail = document.getElementById('Connexion');
+var email = document.getElementById('LeMail');
+var email_m = document.getElementById('Email_Manquant');
+var email_v = /[A-z0-9._-]+[@]{1}[a-zA-Z0-9._-]+[.]{1}[a-zA-Z]{2,4}/;
+EnvoyerMail.addEventListener('click', Email_valid);
 
-const validerEmail = function (inputEmail) {
-    //Création de la regex pour vérifier notre email
-    let emailRegExp = new RegExp(
-        '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g'
-    );
-};
-
-let testeremail = emailRegExp.test(inputEmail.value);
-let petit = inputEmail.nextElementSibling;
-
-if (testeremail) {
-    petit.innerHTML = 'Email OK';
-    petit.classList.remove('text-danger');
-    petit.classList.add('text-success');
-} else {
-    petit.innerHTML = 'Email incorrect';
-    petit.classList.remove('text-success');
-    petit.classList.add('text-danger');
+function Email_valid(e) {
+    if (email.validity.valueMissing) {
+        e.preventDefault();
+        email_m.textContent = 'Email manquant';
+        email_m.style.color = 'red';
+    } else if (email_v.test(email.value) == false) {
+        e.preventDefault();
+        email_m.textContent = "Le format n'est pas correct";
+        email_m.style.color = 'orange';
+    }
 }
-console.log(petit);
+
+var MDPValider = document.getElementById('Envoyer');
+var mdp = document.getElementById('password55');
+var mdp_m = document.getElementById('MDP_Manquant');
+var mdp_v = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+MDPValider.addEventListener('click', MDP_valid);
+
+function MDP_valid(e) {
+    if (mdp.validity.valueMissing) {
+        e.preventDefault();
+        mdp_m.textContent = 'mot de passe vide';
+        mdp_m.style.color = 'red';
+    } else if (mdp_v.test(mdp.value) == false) {
+        e.preventDefault();
+        mdp_m.textContent = "Le format mdp n'est pas correct";
+        mdp_m.style.color = 'orange';
+    }
+}
