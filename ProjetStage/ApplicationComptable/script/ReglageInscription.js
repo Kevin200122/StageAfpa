@@ -131,11 +131,14 @@ var tel_v = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 TelValider.addEventListener('click', Tel_valid);
 
 function Tel_valid(e) {
+    alert('OK');
     if (tel.validity.valueMissing) {
+        alert('ok');
         e.preventDefault();
         tel_m.textContent = 'Téléphone non insérer';
         tel_m.style.color = 'red';
-    } else if (tel_v.test(telephone.value) == false) {
+    } else if (tel_v.test(tel.value) == false) {
+        alert('ok2');
         e.preventDefault();
         tel_m.textContent = 'Le format est incorrect';
         tel_m.style.color = 'orange';
