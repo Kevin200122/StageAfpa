@@ -11,8 +11,9 @@
 </head>
 <body>
     <h3>Bienvenu pour continuer veuillez remplir ce formulaire ci-dessous:</h3>
-    <div>
-        <form method="POST" action="traitement.php" onsubmit="process(event)"></form>
+    <fieldset id="section1">
+    <div id="Inscription">
+        <form class="formulaire" method="POST" action="traitement.php" onsubmit="process(event)"></form>
             <label>Vous êtes un:</label>
             <select>
                 <option>Particulier</option>
@@ -21,7 +22,7 @@
             <label>Votre pays:</label>
             <select>
 <option value="AFG">Afghanistan</option>
-<option value="ALA">Åland Islands</option>
+<option value="ALA">Islands</option>
 <option value="ALB">Albanie</option>
 <option value="DZA">Algérie</option>
 <option value="ASM">Samoa</option>
@@ -295,7 +296,7 @@
             <label>Adresse:</label>
             <input type="text" class="Adresse2" placeholder="Votre adresse"><br>
             <label>Adresse:</label>
-            <input type="text" class="Adresse3" placeholder="Votre adresse"><br>
+            <input type="text" class="Adresse3" placeholder="Votre adresse"><br><br>
             <label>Téléphone(mobile)*:</label>
             <input type="tel" id="LeTelephone" name="phone" placeholder="Ex: 06 54 87 02 70" required="required">
             <span id="Telephone_Vide"></span>
@@ -303,6 +304,7 @@
             <input type="submit" href="Message.html" value="S'inscrire" id="Envoyer">
             <p>Si vous êtes déjà inscrit veuillez vous connecter <a href="Connexion.html">ici</a></p>
         </form>
+    </fieldset>
     </div>
 <script>
     const phoneInputField = document.querySelector("#LeTelephone");

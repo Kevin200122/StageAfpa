@@ -1,0 +1,31 @@
+
+h3{
+    font-weight: bold;
+    font-size: 20px;
+}
+#section1{
+    background-color:lightgreen;
+    width:450px;
+    height:40vh;
+    color:black;
+    font-size:15px;
+    box-shadow:4px 4px 4px 4px blue;
+    border:2px 2px 2px 2px solid blue;
+    cursor:pointer;
+    font-weight: bold;
+}
+input[type="password"]{
+    box-shadow:2px 2px 2px 2px blue;
+    cursor:pointer;
+    font-weight: bold;
+}
+input[type="email"]{
+    box-shadow:2px 2px 2px 2px  blue;
+    font-weight: bold;
+}
+input[type="submit"]{
+    box-shadow:2px 2px 2px 2px  blue;
+}
+input{
+    display:block;
+}
