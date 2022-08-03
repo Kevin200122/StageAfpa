@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Connexion</title>
+    <title>Inscription Utilisateur</title>
 
     <!-- Fontfaces CSS-->
     <link href="../LesFormulaires/css/font-face.css" rel="stylesheet" media="all">
@@ -20,6 +20,8 @@
 
     <!-- Bootstrap CSS-->
     <link href="../LesFormulaires/Pages/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
     <!-- Vendor CSS-->
     <link href="../LesFormulaires/Pages/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -36,7 +38,6 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
@@ -53,10 +54,10 @@
                                     <select>
                                         <option>Particulier</option>
                                         <option>Professionnel</option>
-                                    </select>
+                                    </select><br><br>
 <div class="login-form">
 <form action="" method="post">
-<div class="form-group">
+<div class="form-group" class="PaysSelect">
 <label>Votre pays:</label>
 <select>
 <option value="AFG">Afghanistan</option>
@@ -314,36 +315,44 @@
 <form action="" method="post">
 <div class="form-group">
 <label>Prénom:</label>
-<input class="au-input au-input--full" type="text" name="Prenom" placeholder="Dimitri" required="required">
+<input class="au-input au-input--full" type="text" name="Prenom" placeholder="Dimitri" required="required" id="UnPrenom">
+<span id="Prenom_Vide"></span>
 </div>
 <form action="" method="post">
 <div class="form-group">
 <label>Nom:</label>
-<input class="au-input au-input--full" type="text" name="Nom" placeholder="Lefebvre" required="required">
+<input class="au-input au-input--full" type="text" name="Nom" placeholder="Lefebvre" required="required" id="UnNom">
+<span id="Nom_Vide"></span>
 </div>
 <div class="form-group">
 <label>Email:</label>
-<input class="au-input au-input--full" type="email" name="email" placeholder="Email" required="required">
+<input class="au-input au-input--full" type="email" name="email" placeholder="Email" required="required" id="UnEmail">
+<span id="Email_Vide"></span>
 </div>
 <div class="form-group">
 <label>Mot de passe:</label>
-<input class="au-input au-input--full" type="password" name="password" placeholder="Votre mot de passe" required="required">
+<input class="au-input au-input--full" type="password" name="password" placeholder="Votre mot de passe" required="required" id="LeMdp">
+<span id="MDP_Vide"></span>
 </div>
 <div class="form-group">
     <label>Confirmer mot de passe:</label>
-    <input class="au-input au-input--full" type="password" name="password" placeholder="Confirmer mot de passe" required="required">
+    <input class="au-input au-input--full" type="password" name="password" placeholder="Confirmer mot de passe" required="required" id="LeMdp">
+    <span id="MDP_Vide"></span>
 </div>
 <div class="form-group">
     <label>Ville:</label>
-    <input class="au-input au-input--full" type="text" name="password" placeholder="Votre ville:" required="required">
+    <input class="au-input au-input--full" type="text" name="password" placeholder="Votre ville:" required="required" id="LaVille">
+    <span id="Ville_Vide"></span>
 </div>
 <div class="form-group">
     <label>Code postale:</label>
-    <input class="au-input au-input--full" type="number" name="Code postale" placeholder="78000" required="required">
+    <input class="au-input au-input--full" type="number" name="Code postale" placeholder="78000" required="required" id="LeCp">
+    <span id="CP_Vide"></span>
 </div>
 <div class="form-group">
     <label>Adresse:</label>
-    <input class="au-input au-input--full" type="text" name="adresse" placeholder="Votre adresse:" required="required">
+    <input class="au-input au-input--full" type="text" name="adresse" placeholder="Votre adresse:" required="required" id="UneAdresse">
+    <span id="Adresse_vide"></span>
 </div>
 <div class="form-group">
     <label>Adresse:</label>
@@ -353,10 +362,18 @@
     <label>Adresse:</label>
     <input class="au-input au-input--full" type="text" name="adresse" placeholder="Votre adresse">
 </div>
+<div class="form-group">
+    <label>Téléphone:</label>
+    <input class="au-input au-input--full" type="tel" name="Telephone" placeholder="Ex: 06 81 56 12" id="LeTelephone">
+    <span id="Telephone_Vide"></span>
 </div>
-<button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Inscription</button>
-<div class="social-login-content">
 </div>
+<button class="au-btn au-btn--block au-btn--green m-b-20" href="../LesFormulaires/html/Message.html" type="submit" id="Envoyer">Inscription
+</button>
+ <p>
+    Vous avez déjà un compte?
+    <a href="../LesFormulaires/FormulaireConnexion.html">Connexion ici</a>
+</p>
 </div>
 </div>
 </div>
@@ -385,8 +402,17 @@
     <script src="Pages/select2/select2.min.js">
     </script>
 
+    <script>
+        const phoneInputField = document.querySelector("#LeTelephone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    </script>
+
     <!-- Main JS-->
     <script src="../LesFormulaires/js/main.js"></script>
+    <script src="../LesFormulaires/js/ReglageInscription.js"></script>
 
 </body>
 

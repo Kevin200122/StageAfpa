@@ -57,8 +57,9 @@
 .dropdown-heading:after {
 	font-family: FontAwesome;
 	font-weight: 300;
-	display: inline-block;
+	display: block;
 	content: "\f107";
+	height: 100vh;
 }
 
 .dropdown-heading.active:after {
@@ -85,7 +86,7 @@ li.home-link a {
 	color: black;
 	text-align: center;
 	font-size: 20px;
-	display: inline-block;
+	display: block;
 	width: 45px;
 	height: 50px;
 	background: brown;
@@ -123,7 +124,7 @@ li.home-link a {
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 13px;
-	white-space: nowrap;
+	white-space: pre-wrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-webkit-tap-highlight-color: black;
@@ -255,7 +256,7 @@ li.home-link a {
 	.dropdown-heading:after {
 		font-family: FontAwesome;
 		font-weight: 300;
-		display: inline-block;
+		display: block;
 		content: "\f107";
 	}
 
@@ -309,7 +310,7 @@ li.home-link a {
 
 	/* A list of main items */
 	.dropdown-items li {
-		display: inline;
+		display: block;
 		position: relative;
 	}
 
@@ -317,7 +318,7 @@ li.home-link a {
 	.dropdown-heading {
 		cursor: pointer;
 		color: white;
-		display: inline-block;
+		display: block;
 		padding: 6px;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		font-weight: 400;
@@ -346,7 +347,7 @@ li.home-link a {
 
 	/* The visible heading (parent) for multilevel dropdown items */
 	.has-child span.parent {
-		display: inline-block;
+		display: block;
 		width: 100%;
 		box-sizing: border-box;
 		padding: 10px;

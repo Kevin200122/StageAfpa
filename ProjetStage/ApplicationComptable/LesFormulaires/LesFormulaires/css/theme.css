@@ -40,6 +40,15 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
 /*                   GENERIC                           */
 /*-----------------------------------------------------*/
 /* ----- Normalize ----- */
+
+
+Select {
+    cursor: pointer;
+    box-shadow: 4px 4px 4px 4px green;
+    border: 2px 2px 2px 2px solid green;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -103,10 +112,11 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #666;
+    color: gray;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 150vh;
+    height: 100vh;
+    background: linear-gradient(gray 50%, #fff 50%);
 }
 
 h1,
@@ -335,7 +345,7 @@ section {
 }
 
 .page-content--bge5 {
-    background: #e5e5e5;
+    background: linear-gradient(to bottom, gray 50%, #fff 50%);
     height: 100vh;
 }
 

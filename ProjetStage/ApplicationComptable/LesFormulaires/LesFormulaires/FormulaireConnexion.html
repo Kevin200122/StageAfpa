@@ -50,32 +50,30 @@
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email" required="required"
+                                    id="LeMail">
+                                    <span id="Email_Manquant"></span>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required="required" id="password55">
+                                    <span id="MDP_Manquant"></span>
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember">Remember Me
+                                        <input type="checkbox" name="remember">Se souvenir de moi
                                     </label>
                                     <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <a href="#">Mot de passe oublié?</a>
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with Facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" id="Envoyer_Formulaire">sign in</button>
                                 </div>
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
+                                    Vous n'avez pas de compte?
+                                    <a href="../LesFormulaires/FormulaireInscription.html">Inscription ici</a>
                                 </p>
                             </div>
                         </div>
@@ -108,7 +106,8 @@
     </script>
 
     <!-- Main JS-->
-    <script src="js/main.js"></script>
+    <script src="../LesFormulaires/js/main.js"></script>
+    <script src="../LesFormulaires/js/ReglageConnexion.js"></script>
 
 </body>
 
