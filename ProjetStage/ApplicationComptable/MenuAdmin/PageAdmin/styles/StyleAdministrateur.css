@@ -21,11 +21,16 @@
 
 .codehim-dropdown {
 	width: 100%;
-	height: 50px;
+	max-width: 230px;
+	/*Ceci sert pour augmenter ou diminuer la largeur du menu dropdown*/
+	height: 100%;
 	box-sizing: border-box;
+	/*La propriété CSS box-sizing définit la façon dont la hauteur et la largeur totale d'un élément est calculée 
+	(avec le modèle de boîte CSS).*/
 	-webkit-tap-highlight-color: transparent;
 	transition: 0s;
 	background-color: brown;
+	/*La couleur de fond du menu est de couleur marron*/
 }
 
 .codehim-dropdown.sticky {
@@ -85,7 +90,7 @@ li.home-link a {
 	color: black;
 	text-align: center;
 	font-size: 20px;
-	display: inline-block;
+	display: block;
 	width: 45px;
 	height: 50px;
 	background: brown;
@@ -255,8 +260,9 @@ li.home-link a {
 	.dropdown-heading:after {
 		font-family: FontAwesome;
 		font-weight: 300;
-		display: inline-block;
+		display: block;
 		content: "\f107";
+		float: right;
 	}
 
 	/* Sub Dropdowns heading */
@@ -295,7 +301,8 @@ li.home-link a {
 		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 		width: 150px;
 		position: absolute;
-		left: 2px;
+		left: 200px;
+		top: 0;
 	}
 
 	.menu-items li {
@@ -317,11 +324,12 @@ li.home-link a {
 	.dropdown-heading {
 		cursor: pointer;
 		color: white;
-		display: inline-block;
+		display: block;
 		padding: 6px;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		font-weight: 400;
 		text-decoration: none;
+		height: 100%;
 	}
 
 	.main-links:hover,
@@ -333,6 +341,7 @@ li.home-link a {
 
 	.dropdown-heading:after {
 		margin-left: 8px;
+		margin-top: 2px;
 	}
 
 	.has-child span.parent:after {
@@ -346,7 +355,7 @@ li.home-link a {
 
 	/* The visible heading (parent) for multilevel dropdown items */
 	.has-child span.parent {
-		display: inline-block;
+		display: block;
 		width: 100%;
 		box-sizing: border-box;
 		padding: 10px;

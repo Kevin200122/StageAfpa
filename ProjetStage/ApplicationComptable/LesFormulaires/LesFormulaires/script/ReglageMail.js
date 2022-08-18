@@ -6,14 +6,14 @@ EnvoyerMail.addEventListener('click', Email_valid);
 
 function Email_valid(e) {
     if (email.validity.valueMissing) {
-        alert('ok');
         e.preventDefault();
         email_m.textContent = 'Email manquant';
         email_m.style.color = 'red';
     } else if (email_v.test(email.value) == false) {
-        alert('ok2');
         e.preventDefault();
         email_m.textContent = "Le format n'est pas correct";
         email_m.style.color = 'orange';
+    } else {
+        alert("Merci pour mail, un nouveau mot de passe sera envoyer dans votre boîte mail.");
     }
 }
