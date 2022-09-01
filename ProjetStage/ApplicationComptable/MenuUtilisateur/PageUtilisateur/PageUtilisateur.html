@@ -25,6 +25,13 @@ crossorigin="anonymous"></script>
             <li class="home-link">
                <a href="#home_link"><i class="fa fa-home"></i></a>
             </li>
+         <form>
+            <p>
+            <input type="file"  id="file" accept="image/*" onchange="previewImage();">
+            </p>
+            <img id="preview">
+         </form>
+         <p class="file-return"></p>
             <li> <a class="main-links" href="#11">
                <i class="icon fa fa-question-circle"></i>
                Information de la société</a>
@@ -57,14 +64,12 @@ crossorigin="anonymous"></script>
          </ul>
       </nav>
       <main>
-         
       <script>
          $(document).ready(function(){
          
          $(".codehim-dropdown").CodehimDropdown(); //with all default settings
          
          }); 
-         
       </script>
       <!--DEMO ONLY FILES-->
       <link rel="stylesheet" href="../PageUtilisateur/docs/demo-only.css" />

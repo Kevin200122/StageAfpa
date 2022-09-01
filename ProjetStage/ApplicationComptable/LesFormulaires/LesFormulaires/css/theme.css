@@ -457,13 +457,13 @@ section {
 /*-----------------------------------------------------*/
 /*                   COMPONENTS                        */
 /*-----------------------------------------------------*/
-/* ----- Buttons----- */
+/* ----- Les boutons----- */
 .au-btn {
     line-height: 45px;
     padding: 0 35px;
     text-transform: uppercase;
     color: #fff;
-    /*Block de code correspondant aux boutons sign in (se connecter) et aux boutons Facebook + Twitter */
+    /*Block de code correspondant aux boutons (se connecter ou s'inscrire)*/
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -476,24 +476,14 @@ section {
 
 .au-btn:hover {
     color: #fff;
-    /*Hover color correspondant aux boutons sign in (se connecter) et aux boutons Facebook + Twitter*/
-    background: #3868cd;
+    /*Hover color correspondant aux boutons (se connecter ou s'inscrire)*/
 }
 
-.au-btn--blue2 {
-    background: #00aced;
-    /*Couleur correspondant au bouton de Twitter de la page connexion .*/
-}
-
-.au-btn--blue2:hover {
-    background: #00a2e3;
-    /*Change la couleur du bouton Twitter au passage de la souris de la page connexion.*/
-}
 
 .au-btn--block {
     display: block;
     width: 100%;
-    /*Correspond aux boutons sign in(se connecter) et Facebook + Twitter*/
+    /*Correspond aux boutons (se connecter ou s'inscrire).*/
 }
 
 .au-btn-icon i {
@@ -501,19 +491,17 @@ section {
     margin-right: 5px;
 }
 
-.au-btn--blue {
-    background: #4272d7;
-    /*Couleur de fond correspondant au bouton de Facebook (page connexion) */
-}
 
 .au-btn--green {
     background: #63c76a;
-    /*Correspond au bouton pour se connecter nommé sign in (se connecter) de la page connexion.*/
+    /*Correspond au bouton pour se connecter nommé (se connecter ou s'inscrire) 
+    de la page connexion ou inscription.*/
 }
 
 .au-btn--green:hover {
     background: #59bd60;
-    /*Correspond au changement de couleur du bouton sign in(se connecter) au passage de la souris (page connexion)*/
+    /*Correspond au changement de couleur du bouton (se connecter ou s'inscrire) au passage de la souris 
+    (page connexion ou inscription)*/
 }
 
 .au-btn-plus {
@@ -522,6 +510,7 @@ section {
     width: 45px;
     background: #63c76a;
     -webkit-border-radius: 100%;
+    /*Correspond au bouton se connecter ou s'inscrire*/
     -moz-border-radius: 100%;
     border-radius: 100%;
     -webkit-transition: all 0.3s ease;

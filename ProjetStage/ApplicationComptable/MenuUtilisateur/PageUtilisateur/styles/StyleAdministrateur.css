@@ -11,6 +11,11 @@
 	padding: 0;
 }
 
+#preview {
+	height: 128px;
+	width: 128px;
+}
+
 .codehim-dropdown {
 	font-family: 'Nunito', sans-serif;
 	font-style: normal;
@@ -26,7 +31,7 @@
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
 	transition: 0s;
-	background-color:brown;
+	background: brown;
 }
 
 .codehim-dropdown.sticky {
@@ -40,6 +45,63 @@
 
 
 
+/* styles de base si JS est activé */
+.js .input-file-container {
+	position: relative;
+	width: 225px;
+}
+
+.js .input-file-trigger {
+	display: block;
+	padding: 14px 45px;
+	background: #39D2B4;
+	color: #fff;
+	font-size: 1em;
+	transition: all .4s;
+	cursor: pointer;
+}
+
+.js .input-file {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 225px;
+	padding: 14px 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* quelques styles d'interactions */
+.js .input-file:hover+.input-file-trigger,
+.js .input-file:focus+.input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+	background: #34495E;
+	color: #39D2B4;
+}
+
+/* styles du retour visuel */
+.file-return {
+	margin: 0;
+}
+
+.file-return:not(:empty) {
+	margin: 1em 0;
+}
+
+.js .file-return {
+	font-style: italic;
+	font-size: .9em;
+	font-weight: bold;
+}
+
+/* on complète l'information d'un contenu textuel uniquement lorsque le paragraphe n'est pas vide */
+.js .file-return:not(:empty):before {
+	content: "Selected file: ";
+	font-style: normal;
+	font-weight: normal;
+}
+
 
 /* Global Style for Codehim Dropdowns */
 
@@ -49,10 +111,10 @@
 
 .has-child span.parent+ul,
 .menu-items {
-	background:brown;
+	background: brown;
 	list-style: none;
 	display: none;
-	color:white;
+	color: white;
 }
 
 .dropdown-heading:after {
@@ -83,7 +145,7 @@
 
 li.home-link a {
 	text-decoration: none;
-	color:black;
+	color: black;
 	text-align: center;
 	font-size: 20px;
 	display: block;
@@ -113,14 +175,14 @@ li.home-link a {
 	width: 100%;
 	overflow: hidden;
 	z-index: 2;
-	color:white;
+	color: white;
 	cursor: pointer;
 }
 
 .menu-items li a {
 	display: block;
 	padding: 10px;
-	color:white;
+	color: white;
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 13px;
@@ -134,7 +196,7 @@ li.home-link a {
 .has-child span.parent:hover,
 .menu-items li a:hover {
 	background: brown;
-	color:white;
+	color: white;
 	cursor: pointer;
 }
 
@@ -155,10 +217,12 @@ li.home-link a {
 		position: relative;
 		font-size: 14px;
 	}
+
 	.codehim-dropdown .icon {
 		margin: 0 10px 0 5px;
 		font-size: 16px;
 	}
+
 	/* The Off Canvas Menu */
 	.dropdown-items {
 		height: 100%;
@@ -171,20 +235,24 @@ li.home-link a {
 		top: 0;
 		z-index: 999;
 	}
+
 	.menu-items {
 		background: brown;
 		color: white;
 		cursor: pointer;
 	}
+
 	.menu-items li a {
 		padding-left: 15px;
 		background: brown;
 		cursor: pointer;
 	}
+
 	.dropdown-items li {
 		border-bottom: 1px dotted rgba(255, 255, 255, 0.16);
 		overflow: hidden;
 	}
+
 	/* hamburger menu icon to reveal off canvas menu on mobile devices */
 	.hamburger {
 		position: absolute;
@@ -193,27 +261,32 @@ li.home-link a {
 		top: 8px;
 		border-radius: 50%;
 		cursor: pointer;
-		-webkit-tap-highlight-color:brown;
+		-webkit-tap-highlight-color: brown;
 		text-align: center;
 		color: black;
 		font-size: 20px;
 		line-height: 32px;
 	}
+
 	.hamburger:hover {
 		background: brown;
 		cursor: pointer;
 	}
+
 	.hamburger:after {
 		font-family: FontAwesome;
 		content: "\f0c9";
 		font-weight: 200;
 	}
+
 	.hamburger.left {
 		left: 10px;
 	}
+
 	.hamburger.right {
 		right: 10px;
 	}
+
 	.dropdown-items .parent+ul {
 		background: brown;
 		margin: 0;
@@ -221,10 +294,12 @@ li.home-link a {
 		display: none;
 		cursor: pointer;
 	}
+
 	/* Sub Menu list item */
 	.dropdown-items .parent+ul li a {
 		padding-left: 30px;
 	}
+
 	.main-links,
 	.dropdown-heading {
 		display: block;
@@ -232,12 +307,14 @@ li.home-link a {
 		color: rgba(255, 255, 255, 0.8);
 		cursor: pointer;
 	}
+
 	.main-links:hover,
 	.dropdown-heading:hover {
 		background: brown;
 		color: white;
 		cursor: pointer;
 	}
+
 	.dropdown-heading:after {
 		font-family: FontAwesome;
 		font-weight: 300;
@@ -245,6 +322,7 @@ li.home-link a {
 		content: "\f107";
 		float: right;
 	}
+
 	/* Sub Dropdowns heading */
 	.has-child span.parent {
 		padding: 15px;
@@ -253,6 +331,7 @@ li.home-link a {
 		display: block;
 		background: transparent;
 	}
+
 	.has-child span.parent:after {
 		content: "\f107";
 		margin-right: 15px;
@@ -265,7 +344,7 @@ li.home-link a {
 @media screen and (max-width: 719px) and (min-width: 480px) {
 	.codehim-dropdown {
 		background-color: brown;
-		color:white;
+		color: white;
 		cursor: pointer;
 		/* Working on it */
 		/*The tab view is coming soon */
@@ -283,18 +362,22 @@ li.home-link a {
 		left: 200px;
 		top: 0;
 	}
+
 	.menu-items li {
-		color:white;
+		color: white;
 		cursor: pointer;
 	}
+
 	.dropdown-items {
 		list-style: none;
 	}
+
 	/* A list of main items */
 	.dropdown-items li {
 		display: inline;
 		position: relative;
 	}
+
 	a.main-links,
 	.dropdown-heading {
 		cursor: pointer;
@@ -306,23 +389,28 @@ li.home-link a {
 		text-decoration: none;
 		height: 100%;
 	}
+
 	.main-links:hover,
 	.dropdown-heading.active,
 	.dropdown-heading:hover {
 		color: white;
 		cursor: pointer;
 	}
+
 	.dropdown-heading:after {
 		margin-left: 8px;
 		margin-top: 2px;
 	}
+
 	.has-child span.parent:after {
 		content: "\f105";
 	}
+
 	/* Multilevel Dropdown */
 	.has-child {
 		position: relative;
 	}
+
 	/* The visible heading (parent) for multilevel dropdown items */
 	.has-child span.parent {
 		display: block;
@@ -332,6 +420,7 @@ li.home-link a {
 		font-size: 13px;
 		font-weight: 400;
 	}
+
 	.has-child ul {
 		position: absolute;
 		display: block;

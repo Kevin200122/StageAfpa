@@ -6,6 +6,19 @@
  *   License: MIT License
  *   Copyright (c) 2018 - Asif Mughal
  */
+
+
+function previewImage() {
+	var file = document.getElementById("file").files;
+	if (file.length > 0) {
+		var fileReader = new FileReader();
+
+		fileReader.onload = function (event) {
+			document.getElementById("preview").setAttribute("src", event.target.result);
+		};
+		fileReader.readAsDataURL(file[0]);
+	}
+}
 (function ($) {
 	$.fn.CodehimDropdown = function (options) {
 		var setting = $.extend({
@@ -20,8 +33,8 @@
 			offCanvasSpeed: "default", //possible options are default, fast, faster, slow and slower
 			offCanvasDirection: "left", //possible options are left and right 
 			offCanvasWidth: 290, //the width of drawer on mobile devices in pixels
-			onOffCanvasOpen: function () {}, //your custom function to execute when menu open on mobile devices
-			onOffCanvasClose: function () {}, //your custom function to execute when menu closed
+			onOffCanvasOpen: function () { }, //your custom function to execute when menu open on mobile devices
+			onOffCanvasClose: function () { }, //your custom function to execute when menu closed
 
 		}, options);
 

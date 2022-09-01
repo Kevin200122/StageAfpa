@@ -22,14 +22,31 @@ var prenom_v = /^[a-zA-ZéèÎÏÉÈ][a-zéèàêçîï]+([-'\s][a-zA-ZéèÎÏ�
 PrenomValider.addEventListener('click', Prenom_valid);
 
 function Prenom_valid(e) {
-    if (prenom.validity.valueMissing) {
-        e.preventDefault();
+    if (nom.validity.valueMissing) {
+        e.preventDefault();//Valider le input nom, une erreur se produit si vide!!
         prenom_m.textContent = 'Prenom vide';
         prenom_m.style.color = 'red';
-    } else if (prenom_v.test(prenom.value) == false) {
+    } else if (nom_v.test(nom.value) == false) {
         e.preventDefault();
         prenom_m.textContent = "Le Format n'est pas correct";
         prenom_m.style.color = 'orange';
+    }
+}
+var SiretValider = document.getElementById('Envoyer');
+var Siret = document.getElementById('UnSiret');
+var Siret_m = document.getElementById('Siret_Vide');
+var Siret_v = /[0-9]{3}[\.\-]?[0-9]{3}[ \.\-]?[0-9]{3}[ \.\-]?[0-9]{5}/;
+SiretValider.addEventListener('click', Siret_valid);
+
+function Siret_valid(e) {
+    if (Siret.validity.valueMissing) {
+        e.preventDefault();
+        Siret_m.textContent = 'SIRET vide';
+        Siret_m.style.color = 'red';
+    } else if (Siret_v.test(Siret.value) == false) {
+        e.preventDefault();
+        Siret_m.textContent = "Le Format n'est pas correct";
+        Siret_m.style.color = 'orange';
     }
 }
 
@@ -90,7 +107,7 @@ function Ville_valid(e) {
 var CPValider = document.getElementById('Envoyer');
 var cp = document.getElementById('LeCp');
 var cp_m = document.getElementById('CP_Vide');
-var cp_v = /^((0[1-9])|([1-8][0-9])|(9[0-8)|(2A)|(2B))[0-9]{3}$))/;
+var cp_v = /^(([0-8][0-9])|+(9[0-5])|+(2[ab]))[0-9]{3}$/;
 CPValider.addEventListener('click', CP_valid);
 
 function CP_valid(e) {
