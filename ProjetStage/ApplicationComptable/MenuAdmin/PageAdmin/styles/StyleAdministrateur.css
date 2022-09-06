@@ -44,19 +44,6 @@
 	width: 135px;
 }
 
-@media screen {
-	p.bodyText {
-		font-family: verdana, arial, sans-serif;
-		print-color-adjust: economy;
-	}
-}
-
-@media print {
-	p.bodyText {
-		font-family: georgia, times, serif;
-		print-color-adjust: exact;
-	}
-}
 
 
 h3 {

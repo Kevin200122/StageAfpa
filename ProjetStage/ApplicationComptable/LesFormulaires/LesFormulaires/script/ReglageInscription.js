@@ -33,20 +33,20 @@ function Prenom_valid(e) {
     }
 }
 var SiretValider = document.getElementById('Envoyer');
-var Siret = document.getElementById('UnSiret');
-var Siret_m = document.getElementById('Siret_Vide');
-var Siret_v = /[0-9]{3}[\.\-]?[0-9]{3}[ \.\-]?[0-9]{3}[ \.\-]?[0-9]{5}/;
+var siret = document.getElementById('UnSiret');
+var siret_m = document.getElementById('Siret_Vide');
+var siret_v = /^(RCS )?([0-9]{3} ){2}[0-9]{3}$|^([0-9]{3} ){3}[0-9]{4}$/;
 SiretValider.addEventListener('click', Siret_valid);
 
 function Siret_valid(e) {
-    if (Siret.validity.valueMissing) {
+    if (siret.validity.valueMissing) {
         e.preventDefault();
-        Siret_m.textContent = 'SIRET vide';
-        Siret_m.style.color = 'red';
-    } else if (Siret_v.test(Siret.value) == false) {
+        siret_m.textContent = 'Siret Vide';
+        siret_m.style.color = 'red';
+    } else if (siret_v.test(siret.value) == false) {
         e.preventDefault();
-        Siret_m.textContent = "Le Format n'est pas correct";
-        Siret_m.style.color = 'orange';
+        siret_m.textContent = "Le Format n'est pas correct";
+        siret_m.style.color = 'orange';
     }
 }
 
