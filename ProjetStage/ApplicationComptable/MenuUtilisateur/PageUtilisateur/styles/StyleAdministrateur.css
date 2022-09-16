@@ -16,6 +16,12 @@
 	width: 128px;
 }
 
+h2 {
+	color: #fff;
+	text-align: center;
+	font-family: sans-serif;
+}
+
 .codehim-dropdown {
 	font-family: 'Nunito', sans-serif;
 	font-style: normal;

@@ -32,23 +32,7 @@ function Prenom_valid(e) {
         prenom_m.style.color = 'orange';
     }
 }
-var SiretValider = document.getElementById('Envoyer');
-var siret = document.getElementById('UnSiret');
-var siret_m = document.getElementById('Siret_Vide');
-var siret_v = /^(RCS )?([0-9]{3} ){2}[0-9]{3}$|^([0-9]{3} ){3}[0-9]{4}$/;
-SiretValider.addEventListener('click', Siret_valid);
 
-function Siret_valid(e) {
-    if (siret.validity.valueMissing) {
-        e.preventDefault();
-        siret_m.textContent = 'Siret Vide';
-        siret_m.style.color = 'red';
-    } else if (siret_v.test(siret.value) == false) {
-        e.preventDefault();
-        siret_m.textContent = "Le Format n'est pas correct";
-        siret_m.style.color = 'orange';
-    }
-}
 
 var EmailValider = document.getElementById('Envoyer');
 var email = document.getElementById('UnEmail');
@@ -68,6 +52,24 @@ function Email_valid(e) {
     }
 }
 
+var SiretValider = document.getElementById('Envoyer');
+var Siret = document.getElementById("UnSiret");
+var Siret_m = document.getElementById('Siret_Vide');
+var Siret_v = /^[0-9]{14}$/;
+SiretValider.addEventListener('click', Siret_valid);
+
+function Siret_valid(e) {
+    if (Siret.validity.valueMissing) {
+        e.preventDefault();
+        Siret_m.textContent = 'Siret inexistant';
+        Siret_m.style.color = 'red';
+    } else if (Siret_v.test(Siret.value) == false) {
+        e.preventDefault();
+        Siret_m.textContent = 'Le format du Siret est incorrect';
+        Siret_m.style.color = 'orange';
+    }
+}
+
 var MDPValider = document.getElementById('Envoyer');
 var mdp = document.getElementById('LeMdp');
 var mdp_m = document.getElementById('MDP_Vide');
@@ -83,6 +85,24 @@ function MDP_valid(e) {
         e.preventDefault();
         mdp_m.textContent = "Le format mdp n'est pas correct";
         mdp_m.style.color = 'orange';
+    }
+}
+
+var ConfirmValider = document.getElementById('Envoyer');
+var Confirm = document.getElementById('ConfirmMdp');
+var Confirm_m = document.getElementById('Confirm_Vide');
+var Confirm_v = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+ConfirmValider.addEventListener('click', Confirm_valid);
+
+function Confirm_valid(e) {
+    if (Confirm.validity.valueMissing) {
+        e.preventDefault();
+        Confirm_m.textContent = 'Confirme vide';
+        Confirm_m.style.color = 'red';
+    } else if (Confirm_v.test(Confirm.value) == false) {
+        e.preventDefault();
+        Confirm_m.textContent = "Le format mdp n'est pas correct";
+        Confirm_m.style.color = 'orange';
     }
 }
 
@@ -148,14 +168,11 @@ var tel_v = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 TelValider.addEventListener('click', Tel_valid);
 
 function Tel_valid(e) {
-    alert('OK');
     if (tel.validity.valueMissing) {
-        alert('ok');
         e.preventDefault();
         tel_m.textContent = 'Téléphone non insérer';
         tel_m.style.color = 'red';
     } else if (tel_v.test(tel.value) == false) {
-        alert('ok2');
         e.preventDefault();
         tel_m.textContent = 'Le format est incorrect';
         tel_m.style.color = 'orange';

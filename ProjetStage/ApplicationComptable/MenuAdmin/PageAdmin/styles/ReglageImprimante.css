@@ -15,7 +15,7 @@ print {
     }
 
     #banner,
-    #menuright,
+    #menusleft,
     #footer {
         /* Les éléments qui ne seront pas affichés  */
         display: none;

@@ -34,7 +34,6 @@
 
     <!-- Main CSS-->
     <link href="../LesFormulaires/css/theme.css" rel="stylesheet" media="all">
-
 </head>
 
 <body class="animsition">
@@ -44,7 +43,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/Althameos.jfif" alt="CoolAdmin">
+                                <img src="images/Althameos.jfif" alt="CoolAdmin" id="Image">
                             </a>
                         </div>
                         <div class="login-form">
@@ -311,6 +310,7 @@
 <option value="ZWE">Zimbabwe</option>
 </select>
 </div>
+<div id="debug"></div>
 <div class="login-form">
 <form action="" method="post">
 <div class="form-group">
@@ -325,9 +325,10 @@
 <span id="Nom_Vide"></span>
 </div>
 <div class="form-group">
-<label>Numéro de SIRET:</label>
-<input class="au-input au-input--full" type="number" name="SIRET" required="required" placeholder="123 568 941 00056"  id="UnSiret">
+<label>Numéro du SIRET:</label>
+<input class="au-input au-input--full" type="text" name="Siret" required="required" id="UnSiret">
 <span id="Siret_Vide"></span>
+</div>
 </div>
 <div class="form-group">
 <label>Email:</label>
@@ -341,8 +342,8 @@
 </div>
 <div class="form-group">
     <label>Confirmer mot de passe:</label>
-    <input class="au-input au-input--full" type="password" name="password" placeholder="Confirmer mot de passe" required="required" id="LeMdp">
-    <span id="MDP_Vide"></span>
+    <input class="au-input au-input--full" type="password" name="password" placeholder="Confirmer mot de passe" required="required" id="ConfirmMdp">
+    <span id="Confirm_Vide"></span>
 </div>
 <div class="form-group">
     <label>Ville:</label>
@@ -385,6 +386,7 @@
 </div>
 </div>
 </div>
+</form>
 
     <!-- Jquery JS-->
     <script src="../LesFormulaires/Pages/jquery-3.2.1.min.js"></script>

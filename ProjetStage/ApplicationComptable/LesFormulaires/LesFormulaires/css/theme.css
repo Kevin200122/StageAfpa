@@ -21,7 +21,7 @@ Primary use:	Open Source
 /*------------------------------------------------------------------
 # [Color codes]
 
-# Text Color (text): #666666
+# Text Color (text): white;
 # Text Color Deep (Text, title): #333333
 
 ------------------------------------------------------------------*/
@@ -44,8 +44,8 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
 
 Select {
     cursor: pointer;
-    box-shadow: 4px 4px 4px 4px green;
-    border: 2px 2px 2px 2px solid green;
+    box-shadow: 1px 1px 1px 1px green;
+    border: 1px 1px 1px 1px solid green;
 }
 
 
@@ -59,6 +59,10 @@ Select {
 
 ul {
     margin: 0;
+}
+
+#Image {
+    border-radius: 50%;
 }
 
 button,
@@ -112,7 +116,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: gray;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100vh;
@@ -218,7 +222,7 @@ strong {
 .heading-title {
     font-size: 24px;
     font-weight: 500;
-    color: #333;
+    color: white;
     text-transform: capitalize;
     margin-bottom: 10px;
 }
@@ -398,7 +402,7 @@ section {
 }
 
 .login-content {
-    background: #fff;
+    background: rgba(177, 176, 176, 0.876);
     padding: 30px 30px 20px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

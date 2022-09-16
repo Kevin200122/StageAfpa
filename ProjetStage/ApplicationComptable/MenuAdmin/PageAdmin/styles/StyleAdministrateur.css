@@ -12,6 +12,11 @@
 	padding: 0;
 }
 
+body {
+	height: 100vh;
+	background: linear-gradient(gray 50%, #fff 50%);
+}
+
 .codehim-dropdown {
 	font-family: 'Nunito', sans-serif;
 	font-style: normal;
@@ -95,7 +100,7 @@ h3 {
 
 li.home-link a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	text-align: center;
 	font-size: 20px;
 	display: block;
@@ -213,7 +218,7 @@ li.home-link a {
 		cursor: pointer;
 		-webkit-tap-highlight-color: brown;
 		text-align: center;
-		color: black;
+		color: white;
 		font-size: 20px;
 		line-height: 32px;
 	}
@@ -324,7 +329,7 @@ li.home-link a {
 
 	/* A list of main items */
 	.dropdown-items li {
-		display: inline;
+		display: block;
 		position: relative;
 	}
 
