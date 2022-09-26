@@ -13,6 +13,8 @@ function Nom_valid(e) {
         e.preventDefault();
         nom_m.textContent = "Le Format n'est pas correct";
         nom_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 var PrenomValider = document.getElementById('Envoyer');
@@ -30,6 +32,8 @@ function Prenom_valid(e) {
         e.preventDefault();
         prenom_m.textContent = "Le Format n'est pas correct";
         prenom_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -49,6 +53,8 @@ function Email_valid(e) {
         e.preventDefault();
         email_m.textContent = "Le format n'est pas correct";
         email_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -85,6 +91,8 @@ function MDP_valid(e) {
         e.preventDefault();
         mdp_m.textContent = "Le format mdp n'est pas correct";
         mdp_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -115,12 +123,14 @@ VilleValider.addEventListener('click', Ville_valid);
 function Ville_valid(e) {
     if (ville.validity.valueMissing) {
         e.preventDefault();
-        ville_m.textContent = 'Ville non insérer';
+        ville_m.textContent = 'Ville non insérée';
         ville_m.style.color = 'red';
     } else if (ville_v.test(ville.value) == false) {
         e.preventDefault();
         ville_m.textContent = 'Le format est incorrect';
         ville_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -133,12 +143,14 @@ CPValider.addEventListener('click', CP_valid);
 function CP_valid(e) {
     if (cp.validity.valueMissing) {
         e.preventDefault();
-        cp_m.textContent = 'Code postale non insérer';
+        cp_m.textContent = 'Code postale non inséré';
         cp_m.style.color = 'red';
     } else if (cp_v.test(cp.value) == false) {
         e.preventDefault();
         cp_m.textContent = 'Le format est incorrect';
         cp_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -152,12 +164,14 @@ AdresseValider.addEventListener('click', Adresse_valid);
 function Adresse_valid(e) {
     if (adresse.validity.valueMissing) {
         e.preventDefault();
-        adresse_m.textContent = 'Adresse non insérer';
+        adresse_m.textContent = 'Adresse non insérée';
         adresse_m.style.color = 'red';
     } else if (adresse_v.test(adresse.value) == false) {
         e.preventDefault();
         adresse_m.textContent = 'Le format est incorrect';
         adresse_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
 
@@ -170,11 +184,13 @@ TelValider.addEventListener('click', Tel_valid);
 function Tel_valid(e) {
     if (tel.validity.valueMissing) {
         e.preventDefault();
-        tel_m.textContent = 'Téléphone non insérer';
+        tel_m.textContent = 'Téléphone non inséré';
         tel_m.style.color = 'red';
     } else if (tel_v.test(tel.value) == false) {
         e.preventDefault();
         tel_m.textContent = 'Le format est incorrect';
         tel_m.style.color = 'orange';
+    }else{
+        e.preventDefault();
     }
 }
